@@ -52,6 +52,6 @@ position: relative;
 .col-form-label{
     color: rgb(50,63,151 );
 }
-.red-dot{
+.col-form-label spangit {
     color: red;
 }   

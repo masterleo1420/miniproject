@@ -95,52 +95,47 @@ fetch(
 
       if (news.ButtonView === 1 || news.ButtonEdit === 1 || news.ButtonDelete === 1) {
         manage.innerHTML = `
-          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#${modalId}"  >
-            <i class="far fa-file-alt" style="color: #769dbd;"></i>
-          </button>
-          <button type="button" class="btn" >
-            <i class="fas fa-edit" style="color: #769dbd;"></i>
-          </button>
-          <button type="button" class="btn" >
-            <i class="fas fa-trash-alt" style="color: #ff0000;"></i>
-          </button>
-          
-          <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">รายละเอียดข่าวประชาสัมพันธ์</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="mb-3">
-                      <label for="news-name" class="col-form-label">ชื่อเรื่อง<span class="red-dot">*&nbsp&nbsp&nbsp</span></label>
-                      <input type="text" id="news-name-${news.NewsId}" value="${dataName}" disabled>
-                    </div>
-                    <div class="mb-3">
-                      <label for="detail-text" class="col-form-label">เนื้อหา<span class="red-dot">*&nbsp&nbsp&nbsp&nbsp&nbsp</span></label>
-                      <input type="text" id="detail-text-${news.NewsId}" value="${newsDetail}" disabled>
-                    </div>
-                    </div>
-                    <div class="mb-6">
-                      <label for="detail-text" class="col-form-label"><span>สถานะ*&nbsp&nbsp&nbsp&nbsp&nbsp</span></label>
-                      <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="${modalSwitchId}"
-                      onchange="changeStatus(${news.NewsId})" ${news.Status == 1 ? "checked" : ""}>
-                      <label class="form-check-label" for="${modalSwitchId}">
-                    </div>
-                    </div>
-
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-                </div>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#${modalId}" >
+          <i class="far fa-file-alt" style="color: #769dbd;"></i>
+        </button>
+        <button type="button" class="btn">
+          <i class="fas fa-edit" style="color: #769dbd;"></i>
+        </button>
+        <button type="button" class="btn">
+          <i class="fas fa-trash-alt" style="color: #ff0000;"></i>
+        </button>
+        
+        <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">รายละเอียดข่าวประชาสัมพันธ์</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="news-name" class="col-form-label">ชื่อเรื่อง<span>*</span></label>
+                    <input type="text" id="news-name-${news.NewsId}" value="${dataName}" disabled>
+                  </div>
+                  <div class="mb-3">
+                    <label for="detail-text" class="col-form-label">เนื้อหา<span>*</span></label>
+                    <input type="text" id="detail-text-${news.NewsId}" value="${newsDetail}" disabled>
+                  </div>
+                  <div class="form-check form-switch">
+                    <label for="${modalSwitchId}">Switch Label</label>
+                    <input class="form-check-input" type="checkbox" id="${modalSwitchId}" onchange="changeStatus(${news.NewsId})" ${news.Status == 1 ? "checked" : ""}>
+                    
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
-        `;
+        </div>
+      `;
       }else{
         manage.innerHTML = `
         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#${modalId}" hidden>
