@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@500&display=swap');
+
+:root{
+    --font-family: 'Noto Sans Thai', sans-serif;
+}
+*{
+    font-family: var(--font-family);
+    
+}
+.container-title{
+    
+    font-size: 24px;
+    padding : 50px;
+    width: 100vw;
+    color: rgb(50,63,151 );
+
+}
+.container-title2{
+    font-family: var(--font-family);
+    font-size: 20px;
+    padding : 25px;
+    width: 100vw;
+    color: rgb(50,63,151 );
+    display: flex ;
+    position: fixed;
+    left: 200px;
+
+}
+.add-button{
+    right:200;
+}
+
+.colorTable{
+    background-color: rgb(181,200,250)
+}
+
+.theme-button-container{
+    display: flex ;
+    align-items: center;
+    position: fixed;
+    right:25px;
+    top:30px;
+}
+
+.table-hover{
+margin-top: 95px;
+position: relative;
+}
+
+
+
+.col-form-label{
+    color: rgb(50,63,151 );
+}
+.red-dot{
+    color: red;
+}   
